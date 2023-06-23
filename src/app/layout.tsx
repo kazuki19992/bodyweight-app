@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata = {
@@ -12,8 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="w-screen h-screen bg-gradient-to-br from-orange-100 dark:from-orange-700 dark:to-orange-950 text-black/95 dark:text-white/95">
+      <body className="h-screen w-screen bg-gradient-to-br from-orange-100 text-black/95 dark:from-orange-700 dark:to-orange-950 dark:text-white/95">
         {children}
+        <Toaster />
       </body>
     </html>
   );

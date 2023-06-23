@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Card: React.FC<{ children: JSX.Element }> = ({ children }) => (
-  <div className="w-full p-3 flex rounded-xl shadow bg-white dark:bg-black mx-auto justify-center items-center">
+  <div className="mx-auto flex h-full w-full items-center justify-center rounded-xl bg-white p-3 shadow dark:bg-black">
     {children}
   </div>
 );
