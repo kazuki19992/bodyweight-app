@@ -2,6 +2,7 @@
 "use client";
 import { Chart } from "@/components/domain/charts/Chart";
 import { Card } from "@/components/shared/cards/Card";
+import { Metadata } from "next";
 import toast from "react-hot-toast";
 
 export default function Home() {
