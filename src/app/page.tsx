@@ -9,7 +9,10 @@ export default function Home() {
       <div className="flex h-full w-full flex-col justify-between gap-3 px-2 py-10 ">
         <div className="min-w-fit">
           <Card>
-            <div className="py-5">
+            <div className="flex flex-col gap-2 py-5">
+              <button className="rounded-full px-3 py-1 outline outline-black/50 dark:outline-white/50 w-fit mx-auto">
+                くしちゃん
+              </button>
               <div className="flex min-w-fit items-baseline justify-center">
                 <input
                   type="number"
@@ -19,7 +22,7 @@ export default function Home() {
                 />
                 <p>kg</p>
               </div>
-              <p className="mt-2 text-center text-black/50 dark:text-white/50">
+              <p className="text-center text-black/50 dark:text-white/50">
                 今日もがんばりましょう！
               </p>
 
@@ -37,7 +40,7 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="grow md:h-full">
+        <div className="grow">
           <Chart />
         </div>
       </div>
