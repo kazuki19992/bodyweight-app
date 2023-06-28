@@ -10,7 +10,7 @@ export default function Home() {
         <div className="min-w-fit">
           <Card>
             <div className="flex flex-col gap-2 py-5">
-              <button className="rounded-full px-3 py-1 outline outline-black/50 dark:outline-white/50 w-fit mx-auto">
+              <button className="mx-auto w-fit rounded-full px-3 py-1 outline outline-black/50 dark:outline-white/50">
                 くしちゃん
               </button>
               <div className="flex min-w-fit items-baseline justify-center">
