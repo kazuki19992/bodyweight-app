@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 export const useHome = (initialState?: number) => {
   const [weight, setWeight] = useState<number | null>(initialState || null);
@@ -11,5 +12,13 @@ export const useHome = (initialState?: number) => {
     }
   };
 
-  return { weight, setWeight, handleInput };
+  const handleAddData = () => {
+    if (Number.isNaN(weight) || weight == null || weight === 0) {
+      toast.error("変な値が入ってきた！！！");
+      return;
+    }
+    toast.success("ちゃんと記録したよ！");
+  };
+
+  return { weight, setWeight, handleInput, handleAddData };
 };

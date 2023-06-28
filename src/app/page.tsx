@@ -6,7 +6,7 @@ import { useHome } from "@/hooks/home";
 import toast from "react-hot-toast";
 
 export default function Home() {
-  const { weight, handleInput } = useHome();
+  const { weight, handleInput, handleAddData } = useHome();
   console.log("WEIGHT", weight);
   return (
     <div className="h-full w-full">
@@ -43,9 +43,7 @@ export default function Home() {
               <div className="w-full px-4 pt-2">
                 <button
                   className="block w-full rounded bg-orange-500 py-2 font-bold text-white hover:bg-orange-700"
-                  onClick={() => {
-                    toast.success("ちゃんと記録したよ！");
-                  }}
+                  onClick={handleAddData}
                 >
                   記録する！
                 </button>
