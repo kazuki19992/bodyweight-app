@@ -2,10 +2,12 @@
 "use client";
 import { Chart } from "@/components/domain/charts/Chart";
 import { Card } from "@/components/shared/cards/Card";
-import { Metadata } from "next";
+import { useHome } from "@/hooks/home";
 import toast from "react-hot-toast";
 
 export default function Home() {
+  const { weight, handleInput } = useHome();
+  console.log("WEIGHT", weight);
   return (
     <div className="h-full w-full">
       <div className="flex h-full w-full flex-col justify-between gap-3 px-2 py-10 ">
@@ -26,6 +28,11 @@ export default function Home() {
                   className="dseg w-4/5 rounded bg-black/10 p-2 text-center text-7xl dark:bg-white/10"
                   max={100}
                   maxLength={3}
+                  value={weight || ""}
+                  inputMode="decimal"
+                  onChange={(e) => {
+                    handleInput(e.target.value);
+                  }}
                 />
                 <p>kg</p>
               </div>

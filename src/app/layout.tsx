@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="fixed">
       <Head>
         <meta name="application-name" content="BodyWeight" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
-      <body className="h-screen w-screen bg-gradient-to-br from-orange-100 text-black/95 dark:from-orange-700 dark:to-orange-950 dark:text-white/95">
+      <body className="h-screen w-screen overflow-hidden bg-gradient-to-br from-orange-100 text-black/95 dark:from-orange-700 dark:to-orange-950 dark:text-white/95">
         {children}
         <Toaster />
       </body>
