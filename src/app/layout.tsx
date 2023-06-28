@@ -1,5 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,6 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#fff" />
+      </Head>
       <body className="h-screen w-screen bg-gradient-to-br from-orange-100 text-black/95 dark:from-orange-700 dark:to-orange-950 dark:text-white/95">
         {children}
         <Toaster />
