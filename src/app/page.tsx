@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Chart } from "@/components/domain/charts/Chart";
 import { Card } from "@/components/shared/cards/Card";
@@ -10,8 +11,13 @@ export default function Home() {
         <div className="min-w-fit">
           <Card>
             <div className="flex flex-col gap-2 py-5">
-              <button className="mx-auto w-fit rounded-full px-3 py-1 outline outline-black/50 dark:outline-white/50">
-                くしちゃん
+              <button className="mx-auto flex w-fit items-center justify-center gap-1 rounded-full p-1 text-sm outline outline-black/50 dark:outline-white/50">
+                <img
+                  src="/userIcon/kazuki19992.JPG"
+                  className="h-6 w-6 rounded-full"
+                  alt="ユーザーアイコン"
+                />
+                <p className="px-2">くしちゃん</p>
               </button>
               <div className="flex min-w-fit items-baseline justify-center">
                 <input
