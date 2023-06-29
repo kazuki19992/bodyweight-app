@@ -30,10 +30,6 @@ export const options = {
     legend: {
       position: "top" as const,
     },
-    title: {
-      display: true,
-      text: "体重変化",
-    },
   },
 };
 
@@ -54,15 +50,15 @@ export const data = {
     {
       label: "体重(せぐ)",
       data: [58.8, 58.4, 58.4, 58.6, 58.5, 58.4, 59, 58.3],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      borderColor: "rgb(52, 219, 235)",
+      backgroundColor: "rgba(52, 219, 235, 0.5)",
       spanGaps: true,
     },
     {
       label: "体重(くしちゃん)",
       data: [54.4, 55.5, 54.8, 55.5, 55, null, 54.8],
-      borderColor: "rgb(51, 176, 120)",
-      backgroundColor: "rgba(51, 176, 120, 0.5)",
+      borderColor: "rgb(245, 118, 49)",
+      backgroundColor: "rgba(245, 118, 49, 0.5)",
       spanGaps: true,
     },
   ],
@@ -71,8 +67,25 @@ export const data = {
 export const Chart = () => {
   return (
     <Card>
-      <div className="relative h-full w-full">
-        <Line options={options} data={data} />
+      <div className="flex h-full w-full flex-col gap-1">
+        <div className="flex w-full items-center justify-between">
+          <p>体重変化</p>
+          <div className="flex items-center text-xs">
+            <button
+              className={`rounded-l-md border border-black/50 px-3 py-1 dark:border-white/50`}
+            >
+              月
+            </button>
+            <button
+              className={`rounded-r-md border border-black/50 px-3 py-1 dark:border-white/50 ${"bg-orange-500/50"}`}
+            >
+              週
+            </button>
+          </div>
+        </div>
+        <div className="relative w-full grow">
+          <Line options={options} data={data} />
+        </div>
       </div>
     </Card>
   );

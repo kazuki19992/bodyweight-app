@@ -2,6 +2,7 @@
   "theme_color": "#ea580c",
   "background_color": "#ea580c",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "scope": "/",
   "start_url": "/",
   "name": "BodyWeight - 体重管理",

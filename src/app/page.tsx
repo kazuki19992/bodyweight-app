@@ -14,7 +14,7 @@ export default function Home() {
         <div className="min-w-fit">
           <Card>
             <div className="flex flex-col gap-2 py-5">
-              <button className="mx-auto flex w-fit items-center justify-center gap-1 rounded-full p-1 text-sm outline outline-black/50 dark:outline-white/50">
+              <button className="mx-auto flex w-fit items-center justify-center gap-1 rounded-full border border-black/50 p-1 text-sm dark:border-white/50">
                 <img
                   src="/userIcon/kazuki19992.JPG"
                   className="h-6 w-6 rounded-full"
