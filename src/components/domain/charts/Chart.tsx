@@ -12,6 +12,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Card } from "@/components/shared/cards/Card";
+import { GraphMode, UserIds, Users } from "@/types/home";
 
 ChartJS.register(
   CategoryScale,
@@ -48,14 +49,14 @@ export const data = {
   labels,
   datasets: [
     {
-      label: "体重(せぐ)",
+      label: `体重(${Users[UserIds.SEG].name})`,
       data: [58.8, 58.4, 58.4, 58.6, 58.5, 58.4, 59, 58.3],
       borderColor: "rgb(52, 219, 235)",
       backgroundColor: "rgba(52, 219, 235, 0.5)",
       spanGaps: true,
     },
     {
-      label: "体重(くしちゃん)",
+      label: `体重(${Users[UserIds.KAZ].name})`,
       data: [54.4, 55.5, 54.8, 55.5, 55, null, 54.8],
       borderColor: "rgb(245, 118, 49)",
       backgroundColor: "rgba(245, 118, 49, 0.5)",
@@ -64,7 +65,13 @@ export const data = {
   ],
 };
 
-export const Chart = () => {
+export const Chart = ({
+  graphMode,
+  changeGraphMode,
+}: {
+  graphMode: GraphMode;
+  changeGraphMode: (mode: GraphMode) => void;
+}) => {
   return (
     <Card>
       <div className="flex h-full w-full flex-col gap-1">
@@ -72,12 +79,18 @@ export const Chart = () => {
           <p>体重変化</p>
           <div className="flex items-center text-xs">
             <button
-              className={`rounded-l-md border border-black/50 px-3 py-1 dark:border-white/50`}
+              className={`rounded-l-md border border-black/50 px-3 py-1 dark:border-white/50 ${
+                graphMode === GraphMode.MONTH && "bg-orange-500/50"
+              }`}
+              onClick={() => changeGraphMode(GraphMode.MONTH)}
             >
               月
             </button>
             <button
-              className={`rounded-r-md border border-black/50 px-3 py-1 dark:border-white/50 ${"bg-orange-500/50"}`}
+              className={`rounded-r-md border border-black/50 px-3 py-1 dark:border-white/50 ${
+                graphMode === GraphMode.WEEK && "bg-orange-500/50"
+              }`}
+              onClick={() => changeGraphMode(GraphMode.WEEK)}
             >
               週
             </button>
